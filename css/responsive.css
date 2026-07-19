@@ -1,0 +1,115 @@
+/* ==========================================================================
+   Responsive Styles
+   ========================================================================== */
+
+/* Tablet (Max-width: 992px) */
+@media (max-width: 992px) {
+  :root {
+    --space-xl: 5rem;
+    --space-lg: 3rem;
+  }
+  
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.25rem;
+  }
+
+  .nav-links {
+    gap: 1.5rem;
+  }
+}
+
+/* Mobile (Max-width: 768px) */
+@media (max-width: 768px) {
+  :root {
+    --space-xl: 4rem;
+    --space-lg: 2rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  .section {
+    padding: var(--space-lg) 0;
+  }
+
+  /* Navbar Mobile Menu */
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: var(--color-bg);
+    flex-direction: column;
+    padding: var(--space-md);
+    gap: 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: all var(--transition-normal);
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-actions {
+    display: none; /* Hide desktop CTA in mobile nav or move it to menu */
+  }
+
+  /* Grid Adjustments */
+  .grid {
+    grid-template-columns: 1fr !important; /* Force 1 column on mobile */
+  }
+  
+  /* Flex Adjustments */
+  .flex-mobile-col {
+    flex-direction: column;
+  }
+  
+  .flex-mobile-col-reverse {
+    flex-direction: column-reverse;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-sm);
+  }
+}
+
+/* Small Mobile (Max-width: 480px) */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+}

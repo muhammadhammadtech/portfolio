@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Muhammad Hammad - DevOps Engineer</title>
+  <meta name="description" content="Learn about my journey as a DevOps Engineer, my learning philosophy, and the tools I use to build scalable cloud infrastructure.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  
+  <style>
+    /* About Specific Styles */
+    .about-header {
+      padding: calc(var(--space-xl) + 80px) 0 var(--space-md);
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .about-scroll-indicator {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
+      margin-top: 1.25rem;
+      color: var(--color-primary);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      animation: aboutScrollPulse 2.2s ease-in-out infinite;
+    }
+
+    .about-scroll-indicator svg {
+      width: 1.1rem;
+      height: 1.1rem;
+    }
+
+    @keyframes aboutScrollPulse {
+      0%, 100% { transform: translateY(0); opacity: 0.65; }
+      50% { transform: translateY(5px); opacity: 1; }
+    }
+
+    .about-story-section {
+      padding-top: calc(var(--space-xl) * 0.5);
+    }
+
+    .about-timeline-section {
+      text-align: center;
+    }
+
+    .about-timeline-section .timeline {
+      max-width: 760px;
+      margin: var(--space-lg) auto 0;
+      text-align: left;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: var(--space-lg) auto;
+      padding-left: 2rem;
+      border-left: 2px solid var(--color-border);
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin-bottom: var(--space-lg);
+    }
+    
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+    
+    .timeline-dot {
+      position: absolute;
+      left: -2.5625rem;
+      top: 0.25rem;
+      width: 16px;
+      height: 16px;
+      box-sizing: border-box;
+      border-radius: 50%;
+      background: var(--color-primary);
+      border: 3px solid var(--color-bg);
+      box-shadow: 0 0 0 2px var(--color-primary-light);
+    }
+    
+    .timeline-date {
+      font-size: 0.875rem;
+      color: var(--color-primary);
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      display: block;
+    }
+    
+    /* Skills Grid */
+    .skills-section {
+      background: #0d3b24;
+      border-top: 1px solid #0d3b24;
+      border-bottom: 1px solid #0d3b24;
+      color: #ffffff;
+    }
+
+    .skills-section .section-header h2,
+    .skills-section .section-header p {
+      color: #ffffff;
+    }
+    
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: var(--space-md);
+    }
+    
+    .skill-category {
+      background: #d2f4c9;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: var(--space-md);
+      box-shadow: var(--shadow-md);
+      transition: all var(--transition-normal);
+    }
+    
+    .skill-category:hover {
+      border-color: var(--color-primary-light);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .skill-category h3 {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.125rem;
+      margin-bottom: 1rem;
+      color: #0d2818;
+    }
+    
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    
+    .skill-item {
+      padding: 0.25rem 0.75rem;
+      background: #f5fef3;
+      border: 1px solid #a9d9a0;
+      border-radius: var(--radius-sm);
+      font-size: 0.875rem;
+      color: #0d2818;
+      font-weight: 500;
+      transition: all var(--transition-fast);
+    }
+    
+    .skill-item:hover {
+      background: var(--color-primary-light);
+      color: var(--color-primary);
+      border-color: var(--color-primary-light);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo logo-text-gradient">Portfolio</a>
+      
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="contact.html" class="btn btn-primary nav-mobile-cta" style="display: none; width: 100%; margin-top: 1rem;">Let's Work Together</a>
+      </nav>
+      
+      <div class="nav-actions">
+        <a href="https://github.com/muhammadhammadtech" target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="GitHub">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/muhammadhammadtech/" target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+        <a href="contact.html" class="btn btn-primary">Let's Work Together</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- About Header -->
+    <section class="about-header reveal">
+      <div class="container">
+        <div class="badge">About Me</div>
+        <h1>Architecting <span class="text-gradient moving-gradient">Reliability</span></h1>
+        <p style="margin-top: 1rem; font-size: 1.25rem;">
+          I'm a DevSecOps Engineer - and I didn't start out this way.
+        </p>
+        <div class="about-scroll-indicator" aria-hidden="true">
+          <span>Scroll to explore</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 5v14"></path>
+            <path d="m6 13 6 6 6-6"></path>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Personal Journey -->
+    <section class="section about-story-section">
+      <div class="container about-story-grid">
+        <div class="about-story-media about-story-reveal about-story-image">
+          <div class="about-story-frame">
+            <img src="assets/images/profile-headshot.png" alt="Muhammad Hammad, DevSecOps Engineer">
+          </div>
+        </div>
+
+        <div class="about-story-reveal about-story-copy" style="transition-delay: 0.15s;">
+          <p>I didn't start out in tech. My first real work was as a creator - video editing and design, freelancing with actual clients who had real deadlines and real expectations.</p>
+          <p>That's where I learned the things that don't show up on a resume: how to actually listen to what a client needs, how to deliver something reliable even under pressure, and how to communicate clearly when things go wrong.</p>
+          <p>Somewhere along the way, I got pulled toward the technical side of how things actually run. Not just building things that look good, but building things that stay up.</p>
+          <p>That curiosity turned into a full shift. I moved into DevOps and DevSecOps: AWS, Kubernetes, CI/CD, security-first infrastructure. It felt less like starting over and more like finally finding the right tools for the same instinct - build something people can depend on.</p>
+          <p>Today, I design and ship production-grade infrastructure for SaaS startups. The medium changed. What I actually care about didn't.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section about-timeline-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Experience</h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item reveal" style="transition-delay: 0.1s;">
+            <div class="timeline-dot"></div>
+            <span class="timeline-date">Present</span>
+            <h3>DevOps Engineer, Al Nafi Cloud</h3>
+            <p style="font-size: 1rem; margin-bottom: 0;">Building and maintaining production-grade AWS infrastructure for SaaS clients. Cut release cycles by 40% with CI/CD pipelines using Jenkins and GitHub Actions, deployed containerized apps with Docker and Kubernetes, and built Prometheus/Grafana monitoring that maintained 99.9% uptime.</p>
+          </div>
+          <div class="timeline-item reveal" style="transition-delay: 0.2s;">
+            <div class="timeline-dot"></div>
+            <span class="timeline-date">Before that</span>
+            <h3>DevOps Intern, Al Nafi International College</h3>
+            <p style="font-size: 1rem; margin-bottom: 0;">Started here doing RHCSA-level Linux administration and CI/CD optimization, cutting deployment time by 30% across lab environments. This is where I got hands-on with Docker, Kubernetes, and DevSecOps fundamentals for the first time.</p>
+          </div>
+          <div class="timeline-item reveal" style="transition-delay: 0.3s;">
+            <div class="timeline-dot"></div>
+            <span class="timeline-date">Earlier</span>
+            <h3>Started as a Creator</h3>
+            <p style="font-size: 1rem; margin-bottom: 0;">Before infrastructure, I worked in video editing and design, freelancing with real clients. That's where I learned the fundamentals that still matter most: understanding what a client actually needs, delivering reliably, and communicating clearly through the process. I carried all of that with me into DevSecOps.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section about-timeline-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Education</h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item reveal" style="transition-delay: 0.1s;">
+            <div class="timeline-dot"></div>
+            <span class="timeline-date">EduQual UK</span>
+            <h3>RQF Level 6 Diploma, AIOps</h3>
+            <p style="font-size: 1rem; margin-bottom: 0;">An RQF Level 6 diploma (equivalent to a UK Bachelor's degree), covering the full progression through Levels 4 and 5 before reaching Level 6. Coursework spanned DevOps and CI/CD tooling (Jenkins, GitHub Actions, GitLab CI), containers (Docker, Kubernetes, AWS EKS), security scanning (Trivy), compliance frameworks (ISO 27001, NIST 800-92), and applied AI/ML for data operations. Final project used a Spiking Neural Network for inference on Kubernetes infrastructure.</p>
+          </div>
+          <div class="timeline-item reveal" style="transition-delay: 0.2s;">
+            <div class="timeline-dot"></div>
+            <span class="timeline-date">Govt. College for Men, Nazimabad</span> 
+            <h3>Intermediate (HSSC), Pre-Engineering</h3>
+            <p style="font-size: 1rem; margin-bottom: 0;">Foundation in Physics, Mathematics, and Pre-Engineering - the analytical base that later shaped how I approach systems and infrastructure design.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Grid -->
+    <section class="section skills-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>My Tech Stack</h2>
+          <p>The tools and technologies I use to build production-grade infrastructure.</p>
+        </div>
+        
+        <div class="skills-grid reveal">
+          <!-- Cloud -->
+          <div class="skill-category">
+            <h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+              Cloud
+            </h3>
+            <div class="skill-list">
+              <span class="skill-item">AWS</span>
+              <span class="skill-item">EC2</span>
+              <span class="skill-item">S3</span>
+              <span class="skill-item">VPC</span>
+              <span class="skill-item">IAM</span>
+            </div>
+          </div>
+          
+          <!-- Containers -->
+          <div class="skill-category">
+            <h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              Containers
+            </h3>
+            <div class="skill-list">
+              <span class="skill-item">Docker</span>
+              <span class="skill-item">Kubernetes</span>
+              <span class="skill-item">Helm</span>
+              <span class="skill-item">Container Registry</span>
+            </div>
+          </div>
+          
+          <!-- Infrastructure -->
+          <div class="skill-category">
+            <h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M3 15h6"/><path d="M3 18h6"/></svg>
+              Infrastructure
+            </h3>
+            <div class="skill-list">
+              <span class="skill-item">Terraform</span>
+              <span class="skill-item">Ansible</span>
+              <span class="skill-item">IaC</span>
+            </div>
+          </div>
+          
+          <!-- CI/CD -->
+          <div class="skill-category">
+            <h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              CI/CD
+            </h3>
+            <div class="skill-list">
+              <span class="skill-item">GitHub Actions</span>
+              <span class="skill-item">Jenkins</span>
+              <span class="skill-item">GitOps</span>
+            </div>
+          </div>
+          
+          <!-- Monitoring -->
+          <div class="skill-category">
+            <h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+              Monitoring
+            </h3>
+            <div class="skill-list">
+              <span class="skill-item">Prometheus</span>
+              <span class="skill-item">Grafana</span>
+              <span class="skill-item">ELK Stack</span>
+            </div>
+          </div>
+          
+          <!-- Languages & OS -->
+          <div class="skill-category">
+            <h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>
+              Languages & OS
+            </h3>
+            <div class="skill-list">
+              <span class="skill-item">Linux</span>
+              <span class="skill-item">Python</span>
+              <span class="skill-item">Bash</span>
+              <span class="skill-item">YAML</span>
+            </div>
+          </div>
+
+          <!-- AI Tools -->
+          <div class="skill-category">
+            <h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><path d="m12 2 1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2Z"></path><path d="m19 16 .7 2.3L22 19l-2.3.7L19 22l-.7-2.3L16 19l2.3-.7L19 16Z"></path></svg>
+              AI Tools
+            </h3>
+            <div class="skill-list">
+              <span class="skill-item">Claude</span>
+              <span class="skill-item">ChatGPT</span>
+              <span class="skill-item">Gemini</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-main">
+        <div class="footer-brand"><div class="footer-logo">Muhammad Hammad</div><div class="footer-subtitle">DevSecOps Engineer</div><p class="footer-description">I design reliable cloud infrastructure and automate delivery pipelines for modern teams.</p><a href="contact.html" class="footer-cta">Let's work together <span aria-hidden="true">&rarr;</span></a></div>
+        <div class="footer-column"><h3 class="footer-heading">Explore</h3><nav class="footer-links" aria-label="Footer navigation"><a href="index.html" class="footer-link">Home</a><a href="projects.html" class="footer-link">Projects</a><a href="about.html" class="footer-link">About me</a><a href="contact.html" class="footer-link">Contact</a></nav></div>
+        <div class="footer-column"><h3 class="footer-heading">What I do</h3><ul class="footer-list"><li>Cloud &amp; DevOps</li><li>CI/CD Automation</li><li>Kubernetes &amp; Docker</li><li>Infrastructure as Code</li></ul></div>
+        <div class="footer-column"><h3 class="footer-heading">Connect</h3><div class="footer-socials"><a href="https://github.com" target="_blank" rel="noopener noreferrer" class="footer-social-link">GitHub</a><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-social-link">LinkedIn</a><a href="contact.html" class="footer-social-link">Start a conversation</a></div></div>
+      </div>
+      <div class="footer-bottom"><span>&copy; <span id="current-year"></span> Muhammad Hammad. All rights reserved.</span></div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

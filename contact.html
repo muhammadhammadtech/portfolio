@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Muhammad Hammad - DevOps Engineer</title>
+  <meta name="description" content="Get in touch to discuss DevOps infrastructure, CI/CD automation, and cloud architecture.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  
+  <style>
+    /* Contact Specific Styles */
+    .contact-section {
+      padding: calc(var(--space-xl) + 80px) 0 var(--space-xl);
+      min-height: calc(100vh - 80px); /* Minus header approx */
+    }
+    
+    .contact-grid {
+      display: block;
+    }
+    
+    .contact-info {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .contact-gradient {
+      background-image: linear-gradient(120deg, var(--color-primary), #45a758, #0a4f2e, #75c96d, var(--color-primary));
+      background-size: 300% auto;
+      background-position: 0% 50%;
+      animation: gradientFlow 9s ease-in-out infinite;
+    }
+
+    .contact-form-container {
+      width: 100%;
+      max-width: 720px;
+      margin: var(--space-xl) auto 0;
+    }
+    
+    .contact-form {
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-lg);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 0.5rem;
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 0.875rem 1rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      font-family: inherit;
+      font-size: 1rem;
+      color: var(--color-text);
+      background: var(--color-bg);
+      transition: all var(--transition-fast);
+    }
+    
+    .form-control:focus {
+      outline: none;
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px var(--color-primary-light);
+    }
+    
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    .btn-submit {
+      width: 100%;
+      margin-top: 1rem;
+      justify-content: center;
+    }
+
+    .form-status {
+      min-height: 1.5rem;
+      margin: 1rem 0 0;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .form-status[data-state="success"] {
+      color: var(--color-primary);
+    }
+
+    .form-status[data-state="error"] {
+      color: #a12626;
+    }
+    
+    .contact-socials {
+      display: flex;
+      gap: 1rem;
+      margin-top: var(--space-md);
+      justify-content: center;
+    }
+    
+    .social-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.25rem;
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-full);
+      font-weight: 500;
+      transition: all var(--transition-fast);
+    }
+    
+    .social-btn:hover {
+      background: var(--color-primary-light);
+      border-color: var(--color-primary-light);
+      color: var(--color-primary);
+      transform: translateY(-2px);
+    }
+    
+    @media (max-width: 992px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .contact-info {
+        text-align: center;
+      }
+      .contact-socials {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="navbar contact-navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo logo-text-gradient">Portfolio</a>
+      
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+        <a href="contact.html" class="btn btn-primary nav-mobile-cta" style="display: none; width: 100%; margin-top: 1rem;">Let's Work Together</a>
+      </nav>
+      
+      <div class="nav-actions">
+        <a href="https://github.com/muhammadhammadtech" target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="GitHub">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/muhammadhammadtech/" target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="contact-section">
+      <div class="container contact-grid">
+        
+        <div class="contact-info reveal">
+          <div class="badge">Contact</div>
+          <h1>Let's Build Something <span class="text-gradient contact-gradient">Great Together</span></h1>
+          <p>Whether you need to scale your infrastructure, automate your deployments, or just want to discuss cloud architecture, I'm ready to help.</p>
+          
+          <div class="contact-socials">
+            <a href="https://www.linkedin.com/in/muhammadhammadtech/" target="_blank" rel="noopener noreferrer" class="social-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+              LinkedIn
+            </a>
+            <a href="https://github.com/muhammadhammadtech" target="_blank" rel="noopener noreferrer" class="social-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+              </svg>
+              GitHub
+            </a>
+            <a href="mailto:mohammadhammad.tech@gmail.com" class="social-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                <polyline points="3 7 12 13 21 7"></polyline>
+              </svg>
+              Email Me
+            </a>
+          </div>
+        </div>
+        
+        <div class="contact-form-container reveal" style="transition-delay: 0.2s;">
+          <form id="contact-form" class="contact-form">
+            <div class="form-group">
+              <label for="name" class="form-label">Full Name</label>
+              <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" id="email" class="form-control" placeholder="Your Email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="help-needed" class="form-label">What do you need help with?</label>
+              <input type="text" id="help-needed" class="form-control" placeholder="e.g. Cloud setup, CI/CD pipeline, Kubernetes migration...">
+            </div>
+            
+            <div class="form-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea id="message" class="form-control" placeholder="How can I help you?" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-submit">Send Message</button>
+            <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+        
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-main"><div class="footer-brand"><div class="footer-logo">Muhammad Hammad</div><div class="footer-subtitle">DevSecOps Engineer</div><p class="footer-description">I design reliable cloud infrastructure and automate delivery pipelines for modern teams.</p></div><div class="footer-column"><h3 class="footer-heading">Explore</h3><nav class="footer-links" aria-label="Footer navigation"><a href="index.html" class="footer-link">Home</a><a href="projects.html" class="footer-link">Projects</a><a href="about.html" class="footer-link">About me</a><a href="contact.html" class="footer-link">Contact</a></nav></div><div class="footer-column"><h3 class="footer-heading">What I do</h3><ul class="footer-list"><li>Cloud &amp; DevOps</li><li>CI/CD Automation</li><li>Kubernetes &amp; Docker</li><li>Infrastructure as Code</li></ul></div><div class="footer-column"><h3 class="footer-heading">Connect</h3><div class="footer-socials"><a href="https://github.com" target="_blank" rel="noopener noreferrer" class="footer-social-link">GitHub</a><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-social-link">LinkedIn</a><a href="contact.html" class="footer-social-link">Start a conversation</a></div></div></div>
+      <div class="footer-bottom"><span>&copy; <span id="current-year"></span> Muhammad Hammad. All rights reserved.</span></div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

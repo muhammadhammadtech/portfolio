@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Muhammad Hammad - DevOps Engineer</title>
+  <meta name="description" content="Explore my portfolio of DevOps projects, including CI/CD pipelines, Kubernetes deployments, and infrastructure automation.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  
+  <style>
+    /* Projects Specific Styles */
+    .projects-header {
+      padding: calc(var(--space-xl) + 80px) 0 var(--space-md);
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .project-card {
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: none;
+    }
+    
+    /* Pure CSS Project Image Placeholder */
+    .project-image {
+      height: 200px;
+      background: linear-gradient(135deg, #f5fef3, #e8f7e5);
+      border-bottom: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-primary);
+      font-weight: 600;
+      font-size: 1.25rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .project-image::after { display: none; }
+    
+    .project-content {
+      padding: var(--space-md);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .project-title {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .project-desc {
+      font-size: 0.9375rem;
+      margin-bottom: 1.5rem;
+      flex: 1;
+    }
+    
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .tech-tag {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.5rem;
+      background: #fafafa;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      color: var(--color-text-secondary);
+      font-weight: 500;
+    }
+    
+    .project-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: auto;
+    }
+    
+    .btn-sm {
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo logo-text-gradient">Portfolio</a>
+      
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      
+      <nav class="nav-links" id="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="projects.html" class="nav-link active">Projects</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="contact.html" class="btn btn-primary nav-mobile-cta" style="display: none; width: 100%; margin-top: 1rem;">Let's Work Together</a>
+      </nav>
+      
+      <div class="nav-actions">
+        <a href="https://github.com/muhammadhammadtech" target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="GitHub">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/muhammadhammadtech/" target="_blank" rel="noopener noreferrer" class="btn-icon" aria-label="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+        <a href="contact.html" class="btn btn-primary">Let's Work Together</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Projects Header -->
+    <section class="projects-header reveal">
+      <div class="container">
+        <div class="badge">Featured Work</div>
+        <h1>Production <span class="text-gradient moving-gradient">Pipelines</span> & Architecture</h1>
+        <p style="margin-top: 1rem;">
+          Real infrastructure I've built and shipped - from CI/CD pipelines to Kubernetes deployments to monitoring systems that actually catch problems before they happen.
+        </p>
+      </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="section pt-0">
+      <div class="container">
+        <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: var(--space-lg);">
+          
+          <!-- Project 1 -->
+          <div class="project-card reveal">
+            <div class="project-image project-image--rps">
+              <div class="project-image-link"><img src="assets/projects/rock-paper-scissors-architecture.png" alt="Rock Paper Scissors AWS EKS architecture diagram"></div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Rock Paper Scissors on AWS EKS</h3>
+              <p class="project-desc">A containerized Flask game deployed on Amazon EKS with Kubernetes, NGINX Ingress, and an automated GitHub Actions delivery pipeline.</p>
+              <div class="project-skills" aria-label="Skills and tools used">
+                <div class="project-skills-track">
+                  <div class="project-skills-group"><span>AWS</span><span>Kubernetes</span><span>Docker</span><span>GitHub Actions</span><span>NGINX</span><span>Python</span><span>HTML</span></div>
+                  <div class="project-skills-group"><span>AWS</span><span>Kubernetes</span><span>Docker</span><span>GitHub Actions</span><span>NGINX</span><span>Python</span><span>HTML</span></div>
+                </div>
+              </div>
+              <div class="project-actions">
+                <a href="rock-paper-scissors.html" class="btn btn-secondary btn-sm">View Full Project</a>
+                <a href="https://github.com/muhammadhammadtech/rock-paper-scissors-k8s" target="_blank" rel="noopener noreferrer" class="btn-icon project-external-link" aria-label="View Rock Paper Scissors on GitHub"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card reveal" style="transition-delay: 0.1s;">
+            <div class="project-image project-image--vaultly">
+              <div class="project-image-link"><img src="assets/projects/vaultly-architecture.png" alt="Vaultly expense tracker system architecture diagram"></div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Vaultly Expense Tracker</h3>
+              <p class="project-desc">A modern Flutter expense tracker powered by Supabase, with secure authentication, real-time sync, analytics, and automated Play Store delivery.</p>
+              <div class="project-skills" aria-label="Skills and tools used">
+                <div class="project-skills-track">
+                  <div class="project-skills-group"><span>Flutter</span><span>Supabase</span><span>Firebase</span><span>GitHub Actions</span><span>Google Play Store</span><span>PostgreSQL</span></div>
+                  <div class="project-skills-group"><span>Flutter</span><span>Supabase</span><span>Firebase</span><span>GitHub Actions</span><span>Google Play Store</span><span>PostgreSQL</span></div>
+                </div>
+              </div>
+              <div class="project-actions">
+                <a href="vaultly.html" class="btn btn-secondary btn-sm">View Full Project</a>
+                <a href="https://play.google.com/store/apps/details?id=app.vaultly.mobile" target="_blank" rel="noopener noreferrer" class="btn-icon project-external-link" aria-label="View Vaultly on Google Play"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#00ADEF" d="M3.2 2.7c-.45.45-.7 1.15-.7 2v14.6c0 .85.25 1.55.7 2L13.9 12 3.2 2.7Z"></path><path fill="#2CCB5A" d="m14.7 12 3.4-3.4L5.3 2.2c-.7-.4-1.5-.3-2.1.5L14.7 12Z"></path><path fill="#E83E26" d="m3.2 21.3c.6.8 1.4.9 2.1.5l12.8-6.4-3.4-3.4L3.2 21.3Z"></path><path fill="#FFC800" d="m14.7 12 3.4 3.4 3.2-1.6c1.4-.7 1.4-2.9 0-3.6l-3.2-1.6-3.4 3.4Z"></path></svg></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card reveal" style="transition-delay: 0.2s;">
+            <div class="project-image project-image--security">
+              <div class="project-image-link"><img src="assets/projects/k8s-cicd-security-scanning.png" alt="Kubernetes CI/CD security scanning pipeline architecture"></div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Kubernetes CI/CD Security Scanning</h3>
+              <p class="project-desc">A DevSecOps pipeline that scans Kubernetes manifests and container images with Trivy, KubeLinter, and Kubesec before publishing detailed security reports.</p>
+              <div class="project-skills" aria-label="Skills and tools used">
+                <div class="project-skills-track">
+                  <div class="project-skills-group"><span>Kubernetes</span><span>GitHub Actions</span><span>Trivy</span><span>KubeLinter</span><span>Kubesec</span></div>
+                  <div class="project-skills-group"><span>Kubernetes</span><span>GitHub Actions</span><span>Trivy</span><span>KubeLinter</span><span>Kubesec</span></div>
+                </div>
+              </div>
+              <div class="project-actions">
+                <a href="k8s-cicd-security-scanning.html" class="btn btn-secondary btn-sm">View Full Project</a>
+                <a href="https://github.com/muhammadhammadtech/k8s-cicd-security-scanning" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm btn-icon" aria-label="View Kubernetes CI/CD Security Scanning on GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="project-card reveal">
+            <div class="project-image project-image--matchly">
+              <div class="project-image-link"><img src="assets/projects/matchlypro-architecture.png" alt="MatchlyPro AI resume matcher tech stack architecture"></div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">MatchlyPro AI Resume Matcher</h3>
+              <p class="project-desc">A modern web application that uses AI to match resumes intelligently, with a fast React interface, Tailwind styling, secure practices, and Vercel deployment.</p>
+              <div class="project-skills" aria-label="Skills and tools used">
+                <div class="project-skills-track">
+                  <div class="project-skills-group"><span>React.js</span><span>Tailwind CSS</span><span>Gemini AI</span><span>GitHub Actions</span><span>Vercel</span><span>JavaScript</span></div>
+                  <div class="project-skills-group"><span>React.js</span><span>Tailwind CSS</span><span>Gemini AI</span><span>GitHub Actions</span><span>Vercel</span><span>JavaScript</span></div>
+                </div>
+              </div>
+              <div class="project-actions">
+                <a href="matchlypro.html" class="btn btn-secondary btn-sm">View Full Project</a>
+                <a href="https://github.com/muhammadhammadtech/MatchlyPro" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm btn-icon" aria-label="View MatchlyPro on GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                <a href="https://matchlypro.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">Live Demo</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5 -->
+          <div class="project-card reveal" style="transition-delay: 0.1s;">
+            <div class="project-image project-image--startupforge">
+              <div class="project-image-link"><img src="assets/projects/startupforge-ai-architecture.png" alt="StartupForge AI architecture overview"></div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">StartupForge AI</h3>
+              <p class="project-desc">An AI-powered SaaS toolkit that transforms a startup idea into a complete business plan with Google Gemini AI, Firebase, and a fast Vite frontend.</p>
+              <div class="project-skills" aria-label="Skills and tools used">
+                <div class="project-skills-track">
+                  <div class="project-skills-group"><span>Google Gemini AI</span><span>Firebase</span><span>Vite</span><span>JavaScript</span><span>Vercel</span><span>GitHub Actions</span></div>
+                  <div class="project-skills-group"><span>Google Gemini AI</span><span>Firebase</span><span>Vite</span><span>JavaScript</span><span>Vercel</span><span>GitHub Actions</span></div>
+                </div>
+              </div>
+              <div class="project-actions">
+                <a href="startupforge-ai.html" class="btn btn-secondary btn-sm">View Full Project</a>
+                <a href="https://github.com/muhammadhammadtech/startupforge-ai" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm btn-icon" aria-label="View StartupForge AI on GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                <a href="https://ai-startup-forge.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">Live Demo</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5 -->
+          <div class="project-card reveal" style="transition-delay: 0.2s;">
+            <div class="project-image project-image--linux-monitoring">
+              <div class="project-image-link"><img src="assets/projects/linux-monitoring-tool-architecture.png" alt="Linux Monitoring Tool architecture overview"></div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Linux Monitoring Tool</h3>
+              <p class="project-desc">A lightweight monitoring tool that collects Linux disk usage statistics, stores historical data in MySQL, and runs in Docker or Kubernetes.</p>
+              <div class="project-skills" aria-label="Skills and tools used">
+                <div class="project-skills-track">
+                  <div class="project-skills-group"><span>Linux</span><span>Python 3.x</span><span>MySQL</span><span>Docker</span><span>Kubernetes</span><span>Kubectl</span></div>
+                  <div class="project-skills-group"><span>Linux</span><span>Python 3.x</span><span>MySQL</span><span>Docker</span><span>Kubernetes</span><span>Kubectl</span></div>
+                </div>
+              </div>
+              <div class="project-actions">
+                <a href="linux-monitoring-tool.html" class="btn btn-secondary btn-sm">View Full Project</a>
+                <a href="https://github.com/muhammadhammadtech/linux-monitoring-stack-k8s" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm btn-icon" aria-label="View Linux Monitoring Tool on GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-main"><div class="footer-brand"><div class="footer-logo">Muhammad Hammad</div><div class="footer-subtitle">DevSecOps Engineer</div><p class="footer-description">I design reliable cloud infrastructure and automate delivery pipelines for modern teams.</p><a href="contact.html" class="footer-cta">Let's work together <span aria-hidden="true">&rarr;</span></a></div><div class="footer-column"><h3 class="footer-heading">Explore</h3><nav class="footer-links" aria-label="Footer navigation"><a href="index.html" class="footer-link">Home</a><a href="projects.html" class="footer-link">Projects</a><a href="about.html" class="footer-link">About me</a><a href="contact.html" class="footer-link">Contact</a></nav></div><div class="footer-column"><h3 class="footer-heading">What I do</h3><ul class="footer-list"><li>Cloud &amp; DevOps</li><li>CI/CD Automation</li><li>Kubernetes &amp; Docker</li><li>Infrastructure as Code</li></ul></div><div class="footer-column"><h3 class="footer-heading">Connect</h3><div class="footer-socials"><a href="https://github.com" target="_blank" rel="noopener noreferrer" class="footer-social-link">GitHub</a><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-social-link">LinkedIn</a><a href="contact.html" class="footer-social-link">Start a conversation</a></div></div></div>
+      <div class="footer-bottom"><span>&copy; <span id="current-year"></span> Muhammad Hammad. All rights reserved.</span></div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

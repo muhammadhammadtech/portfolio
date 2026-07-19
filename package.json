@@ -1,0 +1,10 @@
+{
+  "name": "muhammad-hammad-portfolio",
+  "private": true,
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "dependencies": {
+    "resend": "^6.0.0"
+  }
+}
