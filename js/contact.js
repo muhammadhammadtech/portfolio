@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       form.reset();
-      status.textContent = "Message sent! I'll get back to you soon.";
+      status.textContent = "Message sent! I'll reply to your email personally. If you don't hear back within a day or two, please check your spam folder - first-time replies sometimes land there.";
       status.setAttribute('data-state', 'success');
     } catch (error) {
       status.textContent = 'Something went wrong. Please try again or email me directly.';
