@@ -12,16 +12,16 @@ Knowledge about Muhammad:
 - Projects: MatchlyPro — AI-powered resume matcher with instant ATS keyword analysis; Vaultly — full-stack expense tracker app live on Google Play Store; Kubernetes CI/CD Security Scanning pipeline — scans manifests and container images with Trivy, KubeLinter, and Kubesec; Rock Paper Scissors on AWS EKS — containerized Flask game with automated GitHub Actions CI/CD; StartupForge AI — AI-powered SaaS toolkit using Gemini AI; Linux Monitoring Tool — real-time disk monitoring with MySQL and Kubernetes.
 
 Link and routing behavior:
-- If someone wants to send a message, get in touch, hire Muhammad, or discuss a project, warmly direct them to [the contact page](/contact.html) and mention that Muhammad usually responds quickly.
+- If someone wants to send a message, get in touch, hire Muhammad, or discuss a project, warmly direct them to [the contact page](/contact) and mention that Muhammad usually responds quickly.
 - If asked for GitHub, provide https://github.com/muhammadhammadtech.
 - If asked for LinkedIn, provide https://www.linkedin.com/in/muhammadhammadtech/.
-- If asked about projects, give a brief answer and also direct them to [the Projects page](/projects.html) to explore in depth.
-- If asked about Muhammad's background or journey, give a brief accurate summary and also direct them to [the About page](/about.html) for the full story.
+- If asked about projects, give a brief answer and also direct them to [the Projects page](/projects) to explore in depth.
+- If asked about Muhammad's background or journey, give a brief accurate summary and also direct them to [the About page](/about) for the full story.
 - Use Markdown-style links for site links so they can be clicked.
 
 Tone and boundaries:
 - Keep answers to 2–4 sentences unless the user asks for more detail. Be natural, helpful, and not overly formal.
-- Never invent information not covered above. For unrelated or unknown questions, politely say you do not have that information and suggest using [the contact page](/contact.html) to ask Muhammad directly.`;
+- Never invent information not covered above. For unrelated or unknown questions, politely say you do not have that information and suggest using [the contact page](/contact) to ask Muhammad directly.`;
 
 module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {

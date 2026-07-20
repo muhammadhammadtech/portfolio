@@ -67,6 +67,16 @@
 
     const safeUrl = url => /^(https?:\/\/|\/)[^\s"'<>()]+$/.test(url) ? url : '#';
 
+    const linkLabel = (url, providedLabel) => {
+      if (providedLabel && !/^https?:\/\//.test(providedLabel)) return providedLabel;
+      if (/linkedin\.com/i.test(url)) return 'View LinkedIn Profile';
+      if (/github\.com/i.test(url)) return 'View GitHub';
+      if (/^\/contact(?:\.html)?(?:[?#]|$)/i.test(url)) return 'Visit Contact Page';
+      if (/^\/projects(?:\.html)?(?:[?#]|$)/i.test(url)) return 'Explore Projects';
+      if (/^\/about(?:\.html)?(?:[?#]|$)/i.test(url)) return 'Read About Muhammad';
+      return 'Open link';
+    };
+
     const renderBotMessage = text => {
       const pattern = /\[([^\]]+)\]\(((?:https?:\/\/|\/)[^\s)]+)\)|((?:https?:\/\/|\/)[^\s<]+)/g;
       let html = '';
@@ -75,9 +85,9 @@
 
       while ((match = pattern.exec(text)) !== null) {
         html += escapeHtml(text.slice(lastIndex, match.index));
-        const label = match[1] || match[3];
         const url = safeUrl(match[2] || match[3]);
-        const external = /^https?:\/\//.test(url) ? ' target="_blank" rel="noopener noreferrer"' : '';
+        const label = linkLabel(url, match[1] || match[3]);
+        const external = ' target="_blank" rel="noopener noreferrer"';
         html += `<a href="${escapeHtml(url)}"${external}>${escapeHtml(label)}</a>`;
         lastIndex = pattern.lastIndex;
       }

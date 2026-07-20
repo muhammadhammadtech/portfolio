@@ -154,13 +154,23 @@
 }
 
 .ping-message {
+  box-sizing: border-box;
   max-width: 84%;
+  min-width: 0;
   padding: 0.7rem 0.85rem;
   border-radius: 1rem;
   font-size: 0.9rem;
   line-height: 1.45;
   white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
   animation: pingMessageIn 0.25s ease-out both;
+}
+
+.ping-message a {
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .ping-message-bot {
