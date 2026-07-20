@@ -65,7 +65,14 @@
       '"': '&quot;'
     }[character]));
 
-    const safeUrl = url => /^(https?:\/\/|\/)[^\s"'<>()]+$/.test(url) ? url : '#';
+    const cleanUrl = url => url
+      .trim()
+      .replace(/[.,!?;:'"`\]}]+$/g, '');
+
+    const safeUrl = rawUrl => {
+      const url = cleanUrl(rawUrl);
+      return /^(https?:\/\/|\/)[^\s"'<>()\]]+$/.test(url) ? url : null;
+    };
 
     const linkLabel = (url, providedLabel) => {
       if (providedLabel && !/^https?:\/\//.test(providedLabel)) return providedLabel;
@@ -78,7 +85,7 @@
     };
 
     const renderBotMessage = text => {
-      const pattern = /\[([^\]]+)\]\(((?:https?:\/\/|\/)[^\s)]+)\)|((?:https?:\/\/|\/)[^\s<]+)/g;
+      const pattern = /\[([^\]]+)\]\(((?:https?:\/\/|\/)[^\s<>()\]]+)\)|((?:https?:\/\/|\/)[^\s<>()\]]+)/g;
       let html = '';
       let lastIndex = 0;
       let match;
@@ -86,8 +93,14 @@
       while ((match = pattern.exec(text)) !== null) {
         html += escapeHtml(text.slice(lastIndex, match.index));
         const url = safeUrl(match[2] || match[3]);
-        const label = linkLabel(url, match[1] || match[3]);
+        if (!url) {
+          html += escapeHtml(match[0]);
+          lastIndex = pattern.lastIndex;
+          continue;
+        }
+        const label = linkLabel(url, match[1]);
         const external = ' target="_blank" rel="noopener noreferrer"';
+        console.debug('[Ping] Link href:', url);
         html += `<a href="${escapeHtml(url)}"${external}>${escapeHtml(label)}</a>`;
         lastIndex = pattern.lastIndex;
       }
