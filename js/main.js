@@ -76,4 +76,29 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(chatbotScript);
   }
 
+  // --- Smooth Scrolling (Lenis) ---
+  if (!document.querySelector('script[src*="lenis"]')) {
+    const lenisScript = document.createElement('script');
+    lenisScript.src = 'https://unpkg.com/lenis@1.1.13/dist/lenis.min.js';
+    lenisScript.onload = () => {
+      const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        direction: 'vertical',
+        gestureDirection: 'vertical',
+        smooth: true,
+        mouseMultiplier: 1,
+        smoothTouch: false,
+        touchMultiplier: 2,
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+    };
+    document.head.appendChild(lenisScript);
+  }
+
 });
