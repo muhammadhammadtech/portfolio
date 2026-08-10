@@ -1155,6 +1155,10 @@ p {
   color: white;
 }
 
+.testimonials-section .section-header p {
+  color: rgba(255, 255, 255, 0.82);
+}
+
 .testimonial-marquee {
   position: relative;
   width: min(100%, 500px);
