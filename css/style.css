@@ -1017,68 +1017,6 @@ p {
   transform: translateY(0);
 }
 
-.about-story-grid {
-  display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: var(--space-xl);
-  align-items: flex-start;
-}
-
-.about-story-image {
-  position: sticky;
-  top: 120px;
-  transition-duration: 0.6s;
-  transition-timing-function: ease-out;
-}
-
-.about-story-reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition-property: opacity, transform;
-  transition-duration: 0.6s;
-  transition-timing-function: ease-out;
-}
-
-.about-story-reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.about-story-frame {
-  overflow: hidden;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  background: var(--color-card);
-  box-shadow: var(--shadow-lg);
-  line-height: 0;
-}
-
-.about-story-frame img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.about-story-copy {
-  transition-duration: 0.6s;
-  transition-timing-function: ease-out;
-}
-
-.about-story-copy p:last-child {
-  margin-bottom: 0;
-}
-
-@media (max-width: 768px) {
-  .about-story-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-lg);
-  }
-  .about-story-image {
-    position: relative;
-    top: auto;
-  }
-}
-
 /* ==========================================================================
    New Feature Styles (Logo Gradient, Marquee, Testimonials)
    ========================================================================== */

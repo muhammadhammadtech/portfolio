@@ -20,31 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
     revealObserver.observe(el);
   });
 
-  // Keep the About journey hidden on initial page load. Reveal it only after
-  // the user starts scrolling down to the section, with its own staggered delay.
-  const aboutStoryElements = document.querySelectorAll('.about-story-reveal');
-  if (aboutStoryElements.length) {
-    const revealAboutStory = () => {
-      if (window.scrollY <= 0) return;
-
-      let remaining = false;
-      aboutStoryElements.forEach(el => {
-        if (el.classList.contains('active')) return;
-
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight * 0.85 && rect.bottom > 0) {
-          el.classList.add('active');
-        } else {
-          remaining = true;
-        }
-      });
-
-      if (!remaining) window.removeEventListener('scroll', revealAboutStory);
-    };
-
-    window.addEventListener('scroll', revealAboutStory, { passive: true });
-  }
-
   // --- Number Counter Animation ---
   const statNumbers = document.querySelectorAll('.stat-number');
   
