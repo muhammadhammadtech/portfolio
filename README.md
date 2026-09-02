@@ -1,4 +1,4 @@
-# Muhammad Hammad — DevSecOps Portfolio
+# Muhammad Hammad — Portfolio
 
 > A production-grade portfolio built to showcase real DevSecOps infrastructure work — not a template.
 
