@@ -70,12 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
     link.href = 'https://www.linkedin.com/in/muhammadhammadtech/';
   });
 
-  if (!document.querySelector('script[src="js/chatbot.js"]')) {
-    const chatbotScript = document.createElement('script');
-    chatbotScript.src = 'js/chatbot.js';
-    document.body.appendChild(chatbotScript);
-  }
-
   // --- Smooth Scrolling (Lenis) ---
   if (!document.querySelector('script[src*="lenis"]')) {
     const lenisScript = document.createElement('script');

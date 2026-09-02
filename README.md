@@ -37,7 +37,6 @@ This is Muhammad Hammad's personal portfolio, showcasing his work as a DevSecOps
 ```text
 .
 ├── api/
-│   ├── chat.js
 │   └── contact.js
 ├── assets/
 │   └── icons/
@@ -45,17 +44,13 @@ This is Muhammad Hammad's personal portfolio, showcasing his work as a DevSecOps
 │   ├── footer.html
 │   └── header.html
 ├── css/
-│   ├── chatbot.css
 │   ├── responsive.css
 │   └── style.css
 ├── js/
 │   ├── animations.js
-│   ├── chatbot.js
 │   ├── contact.js
-│   ├── main.js
-│   └── testimonials.js
+│   └── main.js
 ├── index.html
-├── about.html
 ├── projects.html
 ├── contact.html
 ├── rock-paper-scissors.html
